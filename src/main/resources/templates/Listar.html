@@ -1,0 +1,75 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Listar Movimentos</title>
+  
+      <!-- Bootstrap core CSS -->
+    <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+	<div class="card">
+		<div class="card-header">
+			<strong>Listar Movimentos</strong>
+		</div>
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-sm table-striped table-hove table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Operador</th>
+					<th>Data Movimento</th>
+					<th>Saldo Inicial</th>
+					<th>Status</th>
+					<th>Editar</th>
+					<th>Observação</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="mov:${ListMov}">
+					<td th:text="${mov.id}"></td>
+					<td th:text="${mov.operator}"></td>
+					<td th:text="${mov.dateMov}"></td>
+					<td th:text="${mov.initialValue}"></td>
+					<td th:text="${mov.status}"></td>
+					<td>
+						<!-- BOTAO EDITAR-->
+						<div class="btn-group pull-right">
+							<a class="btn btn-sm btn-info" th:href="@{edit/{id} (id=${mov.id})}">✒️</a>
+						</div>
+						<!-- BOTAO DELETE-->
+						<div class="btn-group pull-right">
+							<a class="btn btn-sm btn-danger" 
+								th:href="@{delete/{id} (id=${mov.id})}" 
+								th:data-confirm-delete="|Deseja realmente apagar o registro ${mov.id}?|"
+								onclick= "if(!confirm(this.getAttribute('data-confirm-delete'))) return false" >❌</a>
+						</div>
+						<!-- BOTAO FECHAMENTO-->
+						<div class="btn-group pull-right">
+							<a class="btn btn-sm btn-secondary" th:href="@{fechament/{id} (id=${mov.id})}">🗂️</a>
+						</div>
+					</td>
+				</tr>	
+			</tbody>
+		</table>
+		</div>
+	</div>
+	<div class="card-footer">
+		<a class="btn btn-sm btn-secondary" th:href="@{add}">Adicionar Movimento</a>
+	</div>
+		
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  
+</body>
+</html>

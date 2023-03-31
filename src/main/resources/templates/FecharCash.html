@@ -1,0 +1,184 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+
+    <title>Lynx - Movimentação de Caixa</title>
+
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
+
+   
+  </head>
+
+  <body class="bg-light">
+	     		
+    <main role="main" class="container">
+
+
+<!-- INICIO DO FORMULARIO preencher dados -->  
+     <form th:object="${recebCash}" th:action="@{/movimento/fechament/{id}}" method="POST">
+     
+<!-- EXIBIR ERROS -->
+     					<div class="form-group row" th:if="${#fields.hasAnyErrors()}">
+						<div class="col-md-4">
+							<div class="alert alert-danger">
+								<div th:each="detailedError : ${#fields.detailedErrors()}">
+									<span th:text="${detailedError.message}"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+      
+      <h3 class="border-bottom border-gray pb-2 mb-0" style="text-align: left; padding: 5px;">
+	          Saldo Final:
+	        </h3>
+          <div class="container border border-dark rounded">
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">CÉDULAS</th>
+                  <th scope="col">QTIDADE</th>
+                  <th scope="col">MOEDAS</th>
+                  <th scope="col">QTIDADE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">R$ 2,00</th>
+                  <td>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTwo}" id="ballotTwo" tabindex="6"/>
+                  </td>
+                  <th scope="row">R$ 0,05</th>
+                  <td>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinFivecents}" id="coinFivecents" tabindex="1"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">R$ 5,00</th>
+                  <td>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotFive}" id="ballotFive" tabindex="7"/>
+                  </td>
+                  <th scope="row">R$ 0,10</th>
+                  <td>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinTencents}" id="coinTencents" tabindex="2"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">R$ 10,00</th>
+                  <td>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTen}" id="ballotTen" tabindex="8"/>
+                  </td>
+                  <th scope="row">R$ 0,25</th>
+                  <td>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinFifitycents}" id="coinFifitycents" tabindex="3"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">R$ 20,00</th>
+                  <td>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTwenty}" id="ballotTwenty" tabindex="9"/>
+					</td>
+                  <th scope="row">R$ 0,50</th>
+                  <td>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinFifitycents}" id="coinFifitycents" tabindex="4"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">R$ 50,00</th>
+                  <td>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotFifity}" id="ballotFifity" tabindex="10"/>
+                  </td>
+                  <th scope="row">R$ 1,00</th>
+                  <td>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinOne}" id="coinOne" tabindex="5"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">R$ 100,00</th>
+                  <td>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;" th:field="*{ballotOnehundred}" id="ballotOnehundred" tabindex="11"/>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">R$ 200,00</th>
+                  <td>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTwohundred}" id="ballotTwohundred" tabindex="12"/>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+		
+        </div>
+      </div>
+      
+      <div class="my-3 p-3 bg-white rounded shadow-sm">
+  
+      	<div class="container">
+		  <div class="row">
+		    <div class="col-sm">
+		            	<div class="container">
+		  <div class="row">
+		    <div class="col-sm">
+		      TOTAL CÉDULAS:
+		    </div>
+		    <div class="col-sm">
+		    <td>
+		      <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{totalBallots}" id="totalBallots" readonly=TRUE/>
+		    </td>
+		    </div>
+		  </div>
+		</div>
+		    </div>
+		    <div class="col-sm">
+		            	<div class="container">
+		  <div class="row">
+		    <div class="col-sm">
+		      TOTAL MOEDAS:
+		    </div>
+		    <div class="col-sm">
+		    <td>
+		      <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{totalCoins}" id="totalCoins" readonly=TRUE
+		      	th:text="${#numbers.formatCurrency(500)}"
+		      />
+		    </td>
+		    </div>
+		  </div>
+		</div>
+		    </div>
+		  </div>
+		</div>
+ 
+      </div>
+
+      
+      <div class="my-3 p-3 bg-white rounded shadow-sm">
+  
+ 			<button class="btn btn-sm btn-primary" type="submit">Salvar Dados</button>
+ 
+      </div>
+    </form>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
