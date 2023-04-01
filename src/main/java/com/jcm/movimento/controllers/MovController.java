@@ -104,6 +104,7 @@ public class MovController {
 		receiptService.save(recbCash);
 
 		this.movCachLocal.setReceiptCoins(recbCash);
+		this.movCachLocal.setStatus(Status.FECHADO);
 		movService.save(this.movCachLocal);
 		System.out.println(this.movCachLocal);
 		System.out.println(recbCash);
