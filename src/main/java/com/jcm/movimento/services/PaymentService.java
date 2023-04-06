@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.jcm.movimento.entities.MovCash;
 import com.jcm.movimento.entities.Payment;
 import com.jcm.movimento.repositories.PaymentsRepository;
 
@@ -30,5 +31,9 @@ public class PaymentService {
 	
 	public Payment getById(Integer id) {
 		return paymentRepository.getById(id);
+	}
+	
+	public List<Payment> listByMov(MovCash movCash){
+		return paymentRepository.findByMovCash(movCash);
 	}
 }

@@ -132,11 +132,11 @@
 		            	<div class="container">
 		  <div class="row">
 		    <div class="col-sm mt-2" style=" text-align: right;">
-		      <p class="text-dark">TOTAL CÉDULAS:</p>
+		      <p class="h5">CÉDULAS:</p>
 		    </div>
 		    <div class="col-sm" style=" text-align: left;">
 
-		      <input type="text" class="form-control " style="width: 60px; min-width:150px;"  id="totalBallots2" readonly=TRUE></input>
+		      <input type="text" class="form-control h5" style="width: 60px; min-width:150px;"  id="totalBallots2" readonly=TRUE></input>
 		      
 
 		    </div>
@@ -147,11 +147,11 @@
 		            	<div class="container">
 		  <div class="row">
 		    <div class="col-sm mt-2" style=" text-align: right">
-		      <p class="text-dark">TOTAL MOEDAS:</p>
+		      <p class="h5">MOEDAS:</p>
 		    </div>
 		    <div class="col-sm" style=" text-align: left;">
 
-		      <input type="text" class="form-control " style="width: 60px; min-width:150px;"  id="totalCoins2" readonly=TRUE/>
+		      <input type="text" class="form-control h5" style="width: 60px; min-width:150px;"  id="totalCoins2" readonly=TRUE/>
 
 		    </div>
 		  </div>
@@ -161,11 +161,11 @@
 		            	<div class="container">
 		  <div class="row">
 		    <div class="col-sm mt-2" style=" text-align: right">
-		      <p class="text-dark">TOTAL FINAL:</p>
+		      <p class="h5">TOTAL:</p>
 		    </div>
 		    <div class="col-sm" style=" text-align: left;">
 
-		      <input type="text" class="form-control " style="width: 60px; min-width:150px;"   id="totalFinal" readonly=TRUE/>
+		      <input type="text" class="form-control h5" style="width: 60px; min-width:150px;"   id="totalFinal" readonly=TRUE/>
 
 		    </div>
 		  </div>
@@ -180,10 +180,13 @@
       <div class="my-3 p-3 bg-white rounded shadow-sm">
   
  			<button class="btn btn-sm btn-primary" type="submit">Salvar Dados</button>
+ 			
  			<a class="btn btn-sm btm-danger" th:href="@{/movimento/list}">Voltar</a>
+ 														
+ 			<a class="btn btn-sm btm-danger" th:href="@{/movimento/payments}">Adicionar Pagamentos</a>
+			<a class="btn btn-sm btm-danger" th:href="@{/movimento/ListarPagamentos}">Listar Pagamentos</a>
  			<input type="hidden"   th:field="*{totalBallots}" id="totalBallots" ></input>
  			<input type="hidden" th:field="*{totalCoins}" id="totalCoins" ></input>
- 
       </div>
     </form>
     </main>

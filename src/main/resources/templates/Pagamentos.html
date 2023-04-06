@@ -1,0 +1,73 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+
+    <title>Lynx - Movimentação de Caixa</title>
+
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
+
+   
+  </head>
+
+  <body class="bg-light">
+	     		
+    <main role="main" class="container">
+
+<!-- INICIO DO FORMULARIO preencher dados -->  
+
+      <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Pagamentos/Recebimentos</h3>
+
+        <small class="d-block text-right mt-3">
+          <a href="#">Link</a>
+        </small>
+
+        <div class="container border border-dark rounded">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" class="col-6">HISTÓRICO</th>
+                <th scope="col" class="col col-lg-2" >VALOR</th>
+                <th scope="col" class="col col-lg-2">OPERAÇÃO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="payment:${ListPayments}">
+              	<td th:text="${payment.historic}"></td>
+              	<td th:text="${#numbers.formatCurrency(payment.value)}"></td>
+              	<td th:text="${payment.operation}"></td>
+              </tr>
+              
+            </tbody>
+            </tbody>
+          </table>
+      </div>
+      
+       <div class="my-3 p-3 bg-white rounded shadow-sm">
+  
+ 			
+ 			
+ 			<a class="btn btn-sm btm-danger" th:href="@{/movimento/fechament}">Voltar</a>
+ 														
+ 			<a class="btn btn-sm btm-danger" th:href="@{/movimento/payments}">Adicionar Pagamentos</a>
+		
+      </div>
+
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

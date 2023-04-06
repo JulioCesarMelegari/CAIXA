@@ -7,7 +7,15 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-
+$(function(){
+            $('.js-initialValue').maskMoney({
+				prefix:'R$', 
+				allowNegative: false, 
+				thousands:'.', 
+				decimal:',', 
+				affixesStay: false
+			});
+        })
 
 function calcular(){
     var valor1 = parseInt(document.getElementById('ballotTwo').value, 10) * 2;
@@ -37,3 +45,4 @@ function calcular(){
     document.getElementById('totalCoins').value = total2;
     document.getElementById('totalBallots').value = total1;
 }
+
