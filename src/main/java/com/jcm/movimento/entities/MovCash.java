@@ -48,7 +48,7 @@ public class MovCash {
 	@DecimalMin(value = "200", message = "Preencha com o valor inicial, minimo R$ 200,00")
 	private double initialValue;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "RECEBIMENTO_ID" )
 	private ReceiptCoins receiptCoins;
 	
