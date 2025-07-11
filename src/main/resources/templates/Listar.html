@@ -9,6 +9,7 @@
   
       <!-- Bootstrap core CSS -->
     <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
+    
 </head>
 <body>
 	<div class="card">
@@ -26,8 +27,8 @@
 					<th>Data Movimento</th>
 					<th>Saldo Inicial</th>
 					<th>Status</th>
-					<th>Editar</th>
 					<th>Observação</th>
+					<th>Editar</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,8 +36,9 @@
 					<td th:text="${mov.id}"></td>
 					<td th:text="${mov.operator}"></td>
 					<td th:text="${mov.dateMov}"></td>
-					<td th:text="${mov.initialValue}"></td>
-					<td th:text="${mov.status}"></td>
+					<td th:text="${#numbers.formatCurrency(mov.initialValue)}"></td>
+					<td th:text="${mov.status.description}"></td>
+					<td th:text="${mov.observation}"></td>
 					<td>
 						<!-- BOTAO EDITAR-->
 						<div class="btn-group pull-right">
@@ -47,11 +49,14 @@
 							<a class="btn btn-sm btn-danger" 
 								th:href="@{delete/{id} (id=${mov.id})}" 
 								th:data-confirm-delete="|Deseja realmente apagar o registro ${mov.id}?|"
-								onclick= "if(!confirm(this.getAttribute('data-confirm-delete'))) return false" >❌</a>
+								onclick= "if(!confirm(this.getAttribute('data-confirm-delete'))) return false" 
+							>❌</a>
 						</div>
 						<!-- BOTAO FECHAMENTO-->
-						<div class="btn-group pull-right">
-							<a class="btn btn-sm btn-secondary" th:href="@{fechament/{id} (id=${mov.id})}">🗂️</a>
+						<div class="btn-group pull-right">		
+								<a class="btn btn-sm btn-secondary" 
+									th:href="@{fechament/{id} (id=${mov.id})}"
+								>🗂️</a>							
 						</div>
 					</td>
 				</tr>	

@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="/js/script.js"></script>
 
    
   </head>
@@ -54,57 +55,57 @@
                 <tr>
                   <th scope="row">R$ 2,00</th>
                   <td>
-                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTwo}" id="ballotTwo" tabindex="6"/>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTwo}" id="ballotTwo" tabindex="6" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                   <th scope="row">R$ 0,05</th>
                   <td>
-                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinFivecents}" id="coinFivecents" tabindex="1"/>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinFivecents}" id="coinFivecents" tabindex="1" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">R$ 5,00</th>
                   <td>
-                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotFive}" id="ballotFive" tabindex="7"/>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotFive}" id="ballotFive" tabindex="7" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                   <th scope="row">R$ 0,10</th>
                   <td>
-                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinTencents}" id="coinTencents" tabindex="2"/>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinTencents}" id="coinTencents" tabindex="2" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">R$ 10,00</th>
                   <td>
-                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTen}" id="ballotTen" tabindex="8"/>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTen}" id="ballotTen" tabindex="8" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                   <th scope="row">R$ 0,25</th>
                   <td>
-                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinFifitycents}" id="coinFifitycents" tabindex="3"/>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinTwentyfivecents}" id="coinTwentyfivecents" tabindex="3" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">R$ 20,00</th>
                   <td>
-                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTwenty}" id="ballotTwenty" tabindex="9"/>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTwenty}" id="ballotTwenty" tabindex="9" onblur="calcular()" onfocus="this.value=''"/>
 					</td>
                   <th scope="row">R$ 0,50</th>
                   <td>
-                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinFifitycents}" id="coinFifitycents" tabindex="4"/>
+                  <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinFifitycents}" id="coinFifitycents" tabindex="4" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">R$ 50,00</th>
                   <td>
-                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotFifity}" id="ballotFifity" tabindex="10"/>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotFifity}" id="ballotFifity" tabindex="10" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                   <th scope="row">R$ 1,00</th>
                   <td>
-                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinOne}" id="coinOne" tabindex="5"/>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{coinOne}" id="coinOne" tabindex="5" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">R$ 100,00</th>
                   <td>
-                  	<input type="text" class="form-control form-control-sm" style="width: 60px;" th:field="*{ballotOnehundred}" id="ballotOnehundred" tabindex="11"/>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;" th:field="*{ballotOnehundred}" id="ballotOnehundred" tabindex="11" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                   <td></td>
                   <td></td>
@@ -112,7 +113,7 @@
                 <tr>
                   <th scope="row">R$ 200,00</th>
                   <td>
-                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTwohundred}" id="ballotTwohundred" tabindex="12"/>
+                  	<input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{ballotTwohundred}" id="ballotTwohundred" tabindex="12" onblur="calcular()" onfocus="this.value=''"/>
                   </td>
                   <td></td>
                   <td></td>
@@ -121,9 +122,7 @@
             </table>
 
           </div>
-		
-        </div>
-      </div>
+
       
       <div class="my-3 p-3 bg-white rounded shadow-sm">
   
@@ -132,13 +131,14 @@
 		    <div class="col-sm">
 		            	<div class="container">
 		  <div class="row">
-		    <div class="col-sm">
-		      TOTAL CÉDULAS:
+		    <div class="col-sm mt-2" style=" text-align: right;">
+		      <p class="h5">CÉDULAS:</p>
 		    </div>
-		    <div class="col-sm">
-		    <td>
-		      <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{totalBallots}" id="totalBallots" readonly=TRUE/>
-		    </td>
+		    <div class="col-sm" style=" text-align: left;">
+
+		      <input type="text" class="form-control h5" style="width: 60px; min-width:150px;"  id="totalBallots2" readonly=TRUE></input>
+		      
+
 		    </div>
 		  </div>
 		</div>
@@ -146,15 +146,27 @@
 		    <div class="col-sm">
 		            	<div class="container">
 		  <div class="row">
-		    <div class="col-sm">
-		      TOTAL MOEDAS:
+		    <div class="col-sm mt-2" style=" text-align: right">
+		      <p class="h5">MOEDAS:</p>
 		    </div>
-		    <div class="col-sm">
-		    <td>
-		      <input type="text" class="form-control form-control-sm" style="width: 60px;"  th:field="*{totalCoins}" id="totalCoins" readonly=TRUE
-		      	th:text="${#numbers.formatCurrency(500)}"
-		      />
-		    </td>
+		    <div class="col-sm" style=" text-align: left;">
+
+		      <input type="text" class="form-control h5" style="width: 60px; min-width:150px;"  id="totalCoins2" readonly=TRUE/>
+
+		    </div>
+		  </div>
+		</div>
+		    </div>
+		    		    <div class="col-sm">
+		            	<div class="container">
+		  <div class="row">
+		    <div class="col-sm mt-2" style=" text-align: right">
+		      <p class="h5">TOTAL:</p>
+		    </div>
+		    <div class="col-sm" style=" text-align: left;">
+
+		      <input type="text" class="form-control h5" style="width: 60px; min-width:150px;"   id="totalFinal" readonly=TRUE/>
+
 		    </div>
 		  </div>
 		</div>
@@ -168,7 +180,13 @@
       <div class="my-3 p-3 bg-white rounded shadow-sm">
   
  			<button class="btn btn-sm btn-primary" type="submit">Salvar Dados</button>
- 
+ 			
+ 			<a class="btn btn-sm btm-danger" th:href="@{/movimento/list}">Voltar</a>
+ 														
+ 			<a class="btn btn-sm btm-danger" th:href="@{/movimento/payments}">Adicionar Pagamentos</a>
+			<a class="btn btn-sm btm-danger" th:href="@{/movimento/ListarPagamentos}">Listar Pagamentos</a>
+ 			<input type="hidden"   th:field="*{totalBallots}" id="totalBallots" ></input>
+ 			<input type="hidden" th:field="*{totalCoins}" id="totalCoins" ></input>
       </div>
     </form>
     </main>
