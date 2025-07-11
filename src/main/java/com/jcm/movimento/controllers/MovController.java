@@ -1,11 +1,9 @@
 package com.jcm.movimento.controllers;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,7 +22,6 @@ import com.jcm.movimento.services.PaymentService;
 import com.jcm.movimento.services.ReceiptService;
 
 import jakarta.validation.Valid;
-import lombok.experimental.PackagePrivate;
 
 @Controller
 @RequestMapping("/movimento")
